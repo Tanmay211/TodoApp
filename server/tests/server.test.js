@@ -38,7 +38,7 @@ describe("All test cases", () => {
                 .send({text: testTodo}) // sending post data
                 .expect(200)
                 .expect((res) => {
-                    expect(res.body.text).toBe(testTodo); 
+                    expect(res.body.todo.text).toBe(testTodo); 
                 })
                 .end((err, res) => {
                     if(err){
@@ -135,7 +135,7 @@ describe("All test cases", () => {
                 .expect(200)
                 .expect((res) => {
                     expect(res.body.todo.text).toBe(dummyTodo[0].text);
-                    expect(res.body.todo._id).toBe(dummyTodo[0]._id);
+                    expect(res.body.todo._id).toBe(dummyTodo[0]._id.toHexString());
                 })
                 .end((err,res) => {
                     if(err){
@@ -152,7 +152,7 @@ describe("All test cases", () => {
     describe("PATCH /todos/:id", () => {
         it("should update a todo", (done) => {
             var hexId = dummyTodo[0]._id.toHexString();
-            var newtext = 'Some new text';
+            var newText = 'Some new text';
 
             request(app)
                 .patch(`/todos/${hexId}`)
@@ -171,7 +171,7 @@ describe("All test cases", () => {
 
         it("should set at to null if not completed", (done) => {
             var hexId = dummyTodo[1]._id.toHexString();
-            var newtext = 'Some new text';
+            var newText = 'Some new text';
 
             request(app)
                 .patch(`/todos/${hexId}`)
