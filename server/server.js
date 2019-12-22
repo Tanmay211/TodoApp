@@ -109,6 +109,11 @@ app.patch("/todos/:id", (req, res) => {
     })
 });
 
+// testing heroku route
+app.get("/", (req, res) => {
+    res.send("<h1>Welcome to the Todo App</h1>");
+});
+
 // listening to http requests
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
