@@ -13,6 +13,8 @@ var app = express();    // creating the server
 
 app.use(bodyParser.json()); // to parse the json data in the request into javascript objects
 
+const port = process.env.PORT;
+
 // route setup to create a new Todo
 app.post("/todos", (req, res) => {
     var newTodo = new Todo({
@@ -108,8 +110,8 @@ app.patch("/todos/:id", (req, res) => {
 });
 
 // listening to http requests
-app.listen(process.env.PORT, () => {
-    console.log(`Server started at port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`Server started at port ${port}`);
 });
 
 module.exports = { app };   // exporting the server for testing
