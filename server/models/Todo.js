@@ -14,6 +14,10 @@ var Todo = mongoose.model('Todo',{  // defining a new collection for the databas
     at: {
         type: Number,
         default: null
+    },
+    _creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
     }
 });
 
