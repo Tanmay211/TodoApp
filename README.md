@@ -1,8 +1,8 @@
 # TodoApp
 Get started by downloading or cloning this project to your local repository and run the following commands -
 
-> cd TodoApp
-> npm install
+> ## cd TodoApp
+> ## npm install
 
 Now set up your config.json file in the config folder as - 
 {
