@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");   // database functionality
-const validator = require("validator"); // for validating emal
+const validator = require("validator"); // for validating email
 const jwt = require("jsonwebtoken");    // for creating a auth token
 const _ = require("lodash");
 const bcrypt = require("bcryptjs"); // for hashing a password
 
-// using schema method to create a model so that we can add INSTANCE METHODS to the model which can be called by any document of thid model
+// using schema method to create a model so that we can add INSTANCE METHODS to the model which can be called by any document of this model
 var UserSchema = new mongoose.Schema({
     email: {
         type: String,
